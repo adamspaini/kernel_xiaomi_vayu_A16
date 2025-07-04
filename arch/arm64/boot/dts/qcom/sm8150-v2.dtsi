@@ -1,7 +1,3 @@
-
-/dts-v1/;
-/plugin/;
-
 /* Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -9,35 +5,6 @@
  * only version 2 as published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- */
-
-#include "sm8150.dtsi"
-#include "sm8150-v2-camera.dtsi"
-
-/ {
-	model = "Qualcomm Technologies, Inc. SM8150 V2";
-	qcom,msm-name = "SM8150 V2";
-	qcom,msm-id = <339 0x20000>;
-};
-
-/* Remove smmu nodes specific to SM8150 */
-/delete-node/ &apps_smmu;
-/delete-node/ &kgsl_smmu;
-
-&soc {
-	/delete-node/ llcc-bw-opp-table;
-	/delete-node/ ddr-bw-opp-table;
-	/delete-node/ suspendable-ddr-bw-opp-table;
-};
-
-ts/qcom/sm8150-v2.dtsi
-+64
-Lines changed: 64 additions & 0 deletions
-Original file line number	Diff line number	Diff line change
-@@ -8,27 +8,91 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
